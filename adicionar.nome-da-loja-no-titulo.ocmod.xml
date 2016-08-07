@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Adicionar nome da Loja no Titulo</name>
+    <version>1.0</version>
+    <author>David CHC</author>
+    <link>http://www.davidchc.com.br</link> 
+    <file path="catalog/controller/common/header.php">
+        <operation>
+            <search><![CDATA[$data['title'] = $this->document->getTitle();]]></search>
+            <add position="replace"><![CDATA[
+                $data['title'] = $this->document->getTitle().' | '.$this->config->get('config_name');
+            ]]></add>
+        </operation>
+    </file>   
+</modification>
